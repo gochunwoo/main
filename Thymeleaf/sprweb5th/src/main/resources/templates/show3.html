@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h2>상품 자료들 정보</h2>
+if test : <br>
+<table border="1">
+	<tr>
+	  <th>번호</th><th>아이디</th><th>상품명</th>
+	</tr>
+	<tr th:each="s,idx:${dtos}">
+	  <td th:if="${idx.odd}" th:text="홀수"></td> <!-- idx.even  -->
+	  <td th:unless="${idx.odd}" th:text="짝수"></td>
+	  <td th:text="${s.id}"></td>
+	  <td th:text="${s.name}"></td>
+	</tr>
+</table>
+<br>
+switch test : <br>
+<table border="1">
+	<tr>
+	  <th>번호</th><th>아이디</th><th>상품명</th>
+	</tr>
+	<tr th:each="s,idx:${dtos}">
+	  <td th:switch="${idx.even}">
+	  		<span th:case=true>짝수</span>
+	  		<span th:case=false>홀수</span>
+	  </td>		
+	  <td th:text="${s.id}"></td>
+	  <td th:text="${s.name}"></td>
+	</tr>
+</table>
+<hr>
+<a href="/thleaf/ex1">show1로 이동 1</a><br>
+<a th:href="@{/thleaf/ex1}">show1로 이동 2</a><br>
+<a th:href="@{/thleaf/ex4(param1='오후',param2='계속 수업')}">show4 이동</a>
+</body>
+</html>

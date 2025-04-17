@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link th:href="@{https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css}" rel="stylesheet" />
+</head>
+<body>
+<h2>레이아웃 연습</h2>
+<!-- 머리글 포함 -->
+<th:block th:replace="~{layout/header :: header}"></th:block>
+
+<!-- 특정 페이지 내용으로 대체될 컨텐츠 영역, 이 부분은 각 페이지에서 치환됨 -->
+<div layout:fragment="content"></div>
+
+<!-- 바닥글 포함 -->
+<th:block th:replace="~{layout/foter :: badak}">
+
+</th:block>
+
+</body>
+</html>

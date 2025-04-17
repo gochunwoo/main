@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="https://www.thymeleaf.org">
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<div class="container">
+<h2 th:text="'상품 정보'">직접 데이터 줄 수 있다</h2>
+<table>
+	<tr>
+		<td>아이디 :</td>
+		<td th:text="${dto.id}"></td>
+	</tr>
+	<tr>
+		<td>상품명 :</td>
+		<td th:text="${dto.name}"></td>
+	</tr>
+	<tr>
+		<td>가격 :</td>
+		<td>[[${dto.price}]]</td>
+	</tr>
+	<tr>
+		<td>등록일 :</td>
+		<td th:text="|날짜 ${dto.regDate}임|"></td>
+	</tr>
+</table>
+</body>
+</html>

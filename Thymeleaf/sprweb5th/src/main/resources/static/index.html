@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="/css/style.css"> <!-- ✅ CSS 연결 -->
+</head>
+<body>
+<div class="container"> <!-- ✅ CSS 테스트용 박스 -->
+<h2>Thymeleaf Test</h2>
+<a href="thleaf/ex1">test1</a><br>
+<a href="thleaf/ex2">test2</a><br>
+<a href="thleaf/ex3">test3</a><br>
+<a href="thleaf/ex4?param1=hello&param2=tyme">test4</a><br>
+<a href="thleaf/ex5">test5 layout</a><br>
+<a href="thleaf/ex5_1">test5-1 layout</a><br>
+<hr><hr><hr>
+    <h2>** 요청 파라미터 연습 **<br></h2>
+    <a href="kbs/login?type=admin">관리자</a><br>
+    <a href="kbs/login?type=user">일반인</a><br>
+    <a href="kbs/login">파라미터 없음</a><br>
+    <br>
+    <form action="kbs/login" method="post">
+        data : <input type="text" name="type" value="user">
+        <input type="submit" value="전송1">
+    </form>
+    <hr>
+<a href="ent/hive/singer/bts?title=다이너마이트">요청명에 정보가 포함</a><br><br>
+    <form action="ent/hive/singer/bts">
+        제목 : <input type="text" name="title" value="다이너마이트">
+        <input type="submit" value="요청명에 정보가 포함">
+    </form>
+</div>
+</body>
+</html>

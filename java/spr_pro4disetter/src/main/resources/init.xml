@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	 
+	<!-- 방법1 :setter injection -->
+	<!--  
+	<bean id="myBusiness" class="pack.MyBusiness">
+		<property name="nai" value="23" />
+		<property name="juso" value="테헤란로 12" />
+		<property name="datas" ref="stringDatas"/>
+	</bean>
+	<bean name="stringDatas" class="pack.StringDatas"></bean>
+-->
+
+	<!-- 방법2 :setter injection -->
+	<bean id="myBusiness" class="pack.MyBusiness">
+		<property name="nai" value="23" >
+			<value>25</value>
+		</property>
+		<property name="juso">
+			<value>강남구 역삼동</value>
+		</property>
+		<property name="datas">
+			<bean class="pack.StringDatas" />
+		</property>
+	</bean>
+	
+	
+</beans>

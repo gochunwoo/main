@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	 
+	<!-- Gugudan3 객체 등록 -->
+	<bean id="gugudan3" class="pack.model.Gugudan3" />
+
+	<!-- MyProcess에 값 주입 (programmerName, dan, guguInter) -->
+	<bean id="myProcess" class="pack.controller.MyProcess">
+		<property name="programmerName" value="홍길동" />
+		<property name="dan" value="3" />
+		<property name="guguInter" ref="gugudan3" />
+	</bean>
+	
+	
+</beans>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- 
+	스프랑이 DataDaoimlp 객채를 먼저 만든다 -> daoimpl
+	그다음, selectServiceimpl 객체를 만들면서, 위에서 만든 daoImpl을 생상자에 넣어준다
+	 -->
+	<bean id="daoImpl" class="pack.model.DataDaoImpl" />
+	<bean id="serviceImpl" class="pack.controller.SelectServiceImpl">
+		<constructor-arg>
+			<ref bean="daoImpl"/>
+		</constructor-arg>
+	</bean>
+	
+</beans>
